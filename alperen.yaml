@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: alperen
-        image: nginx:latest
+        image: nginx:1.25
         ports:
         - containerPort: 80
         resources:
