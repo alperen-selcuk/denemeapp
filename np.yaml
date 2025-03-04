@@ -8,10 +8,6 @@ spec:
   policyTypes:
     - Ingress
     - Egress
-  ingress:
-    - from:
-        - namespaceSelector:
-            matchLabels:
-              kubernetes.io/metadata.name: web  
+  ingress: []
   egress:
     - {} 
