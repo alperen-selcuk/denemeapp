@@ -1,15 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-only-same-namespace
+  name: restrict-ingress-to-web
   namespace: web
 spec:
-  podSelector: {}
+  podSelector: {} 
   policyTypes:
     - Ingress
     - Egress
   ingress:
     - from:
-        - podSelector: {} 
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: web  
   egress:
-    - {}
+    - {} 
